@@ -18,5 +18,7 @@ DELTA_T = 1 / room_speed;
 
 state = NORMAL;
 
+gravity_enabled = true;
+
 velocity_x = 0;
 velocity_y = 0;
