@@ -2,7 +2,7 @@ var delta_x = self.velocity_x * DELTA_T;
 var delta_y = self.velocity_y * DELTA_T;
 
 if (self.gravity_enabled) {
-	if (self.velocity_y < MAX_FALL_SPEED && place_free(x, y + 1)) {
+	if (self.velocity_y < self.max_fall_speed && place_free(x, y + 1)) {
 		self.velocity_y += GRAVITY * DELTA_T;
 	}
 }

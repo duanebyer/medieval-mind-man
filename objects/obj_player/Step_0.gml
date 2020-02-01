@@ -1,5 +1,6 @@
 if (self.state == NORMAL) {
 	self.gravity_enabled = true;
+	self.max_fall_speed = NORMAL_FALL_SPEED;
 	
 	var move_dir = 0;
 	if (intent_left()) {

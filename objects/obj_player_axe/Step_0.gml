@@ -4,12 +4,33 @@ if (self.state == NORMAL) {
 	if (intent_attack_pressed()) {
 		self.state = CHARGE;
 		self.charge_timer = 0;
+		if (place_free(x, y + 1) && self.velocity_y >= 0) {
+			self.velocity_y = -CHARGE_JUMP_VELOCITY;
+		}
 	}
 }
 
 if (self.state == CHARGE) {
 	self.gravity_enabled = true;
-	var velocity_change_x = CHARGE_FRICTION * DELTA_T;
+	self.max_fall_speed = NORMAL_FALL_SPEED;
+	var fric = 0;
+	if (!place_free(x, y + 1)) {
+		fric = CHARGE_GROUND_FRICTION;
+	} else {
+		var move_dir = 0;
+		if (intent_left()) {
+			move_dir -= 1;
+		}
+		if (intent_right()) {
+			move_dir += 1;
+		}
+		if (move_dir != sign(self.velocity_x)) {
+			fric = CHARGE_AIR_FRICTION_MAX;
+		} else {
+			fric = CHARGE_AIR_FRICTION_MIN;
+		}
+	}
+	var velocity_change_x = fric * DELTA_T;
 	if (abs(self.velocity_x) <= velocity_change_x) {
 		self.velocity_x = 0;
 	} else {
@@ -18,6 +39,13 @@ if (self.state == CHARGE) {
 	if (!intent_attack() && self.charge_timer > CHARGE_TIME_MIN) {
 		self.state = ATTACK;
 		self.attack_timer = 0;
+		if (place_free(x, y + 1)) {
+			self.velocity_y = -ATTACK_JUMP_VELOCITY_Y;
+			self.velocity_x = image_xscale * ATTACK_JUMP_VELOCITY_X;
+		} else {
+			self.velocity_y = -ATTACK_GROUND_VELOCITY_Y;
+			self.velocity_x = image_xscale * ATTACK_GROUND_VELOCITY_X;
+		}
 	}
 	if (self.charge_timer >= CHARGE_TIME_MAX) {
 		self.image_speed = 0;
@@ -33,7 +61,9 @@ if (self.state == CHARGE) {
 
 if (self.state == ATTACK) {
 	self.gravity_enabled = true;
-	var velocity_change_x = ATTACK_FRICTION * DELTA_T;
+	self.max_fall_speed = ATTACK_FALL_SPEED;
+	var fric = place_free(x, y + 1) ? ATTACK_AIR_FRICTION : ATTACK_GROUND_FRICTION;
+	var velocity_change_x = fric * DELTA_T;
 	if (abs(self.velocity_x) <= velocity_change_x) {
 		self.velocity_x = 0;
 	} else {
