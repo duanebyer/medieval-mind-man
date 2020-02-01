@@ -23,5 +23,12 @@ ATTACK_JUMP_VELOCITY_Y = 150;
 ATTACK_JUMP_VELOCITY_X = 250;
 ATTACK_FALL_SPEED = 550;
 
+sprite_stand = spr_player_axe_stand;
+sprite_walk = spr_player_axe_walk;
+sprite_jump = spr_player_axe_jump;
+sprite_fall = spr_player_axe_fall;
+sprite_charge = spr_player_axe_charge;
+sprite_attack = spr_player_axe_attack;
+
 charge_timer = 0;
 attack_timer = 0;
