@@ -1,4 +1,7 @@
 if (self.state == NORMAL) {
+	self.gravity_enabled = true;
+	self.max_fall_speed = NORMAL_FALL_SPEED;
+	
 	var move_dir = 0;
 	if (intent_left()) {
 		move_dir -= 1;
@@ -27,10 +30,7 @@ if (self.state == NORMAL) {
 		self.velocity_y += JUMP_FRICTION * DELTA_T;
 	}
 
-	if (self.velocity_y < MAX_FALL_SPEED && place_free(x, y + 1)) {
-		self.velocity_y += GRAVITY * DELTA_T;
-	}
-
+	self.image_speed = 1;
 	if (!place_free(x, y + 1)) {
 		if (move_dir == 0) {
 			self.sprite_index = spr_player_stand;

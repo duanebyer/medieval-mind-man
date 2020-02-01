@@ -4,7 +4,7 @@ NORMAL = 1;
 STATE_END = 2;
 
 GRAVITY = 1000;
-MAX_FALL_SPEED = 450;
+NORMAL_FALL_SPEED = 450;
 
 WALK_ACCELERATION = 1400;
 WALK_FRICTION = 2000;
@@ -17,6 +17,9 @@ JUMP_MAX_SPEED = 500;
 DELTA_T = 1 / room_speed;
 
 state = NORMAL;
+
+gravity_enabled = true;
+max_fall_speed = NORMAL_FALL_SPEED;
 
 velocity_x = 0;
 velocity_y = 0;
