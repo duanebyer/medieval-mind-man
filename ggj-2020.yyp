@@ -215,19 +215,19 @@
             }
         },
         {
-            "Key": "83593057-30d5-41f6-954c-de7e8e9768b6",
-            "Value": {
-                "id": "8cfaeae1-39a9-44ab-b439-32ac7705bd03",
-                "resourcePath": "scripts\\intent_down\\intent_down.yy",
-                "resourceType": "GMScript"
-            }
-	},
-	{
             "Key": "82cb176f-b459-4577-9dd2-a050263f217f",
             "Value": {
                 "id": "2eadfaa9-af46-4827-82c9-c103a37e8ceb",
                 "resourcePath": "rooms\\room1\\room1.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "83593057-30d5-41f6-954c-de7e8e9768b6",
+            "Value": {
+                "id": "8cfaeae1-39a9-44ab-b439-32ac7705bd03",
+                "resourcePath": "scripts\\intent_down\\intent_down.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -239,17 +239,18 @@
             }
         },
         {
-            "Key": "9e8d34e3-08a6-4245-a4aa-86f23b34b83c",
-            "Value": {
-                "id": "8a517d13-4947-40b1-b33e-bc7b9a81ab9a",
-                "resourcePath": "sprites\\spr_player_gun_fly_right\\spr_player_gun_fly_right.yy",
-            }
-	},
-	{
             "Key": "95a1e003-9544-4514-94af-22b658f94e44",
             "Value": {
                 "id": "6069c857-bc97-4469-a9db-3df41a66884d",
                 "resourcePath": "sprites\\dead_bad_guy\\dead_bad_guy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9e8d34e3-08a6-4245-a4aa-86f23b34b83c",
+            "Value": {
+                "id": "8a517d13-4947-40b1-b33e-bc7b9a81ab9a",
+                "resourcePath": "sprites\\spr_player_gun_fly_right\\spr_player_gun_fly_right.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -368,18 +369,15 @@
     ],
     "script_order": [
         "5a0738fe-e647-40dc-bb18-150fde89c132",
-        "a0524c15-8074-4353-9cd3-3a6803c6dd04",
         "6dbf12ef-8181-4545-ac44-0d8030378fce",
+        "ac0bf347-a635-43bb-bffd-0057dd2ede95",
+        "a0524c15-8074-4353-9cd3-3a6803c6dd04",
+        "83593057-30d5-41f6-954c-de7e8e9768b6",
         "c12e08b6-86d4-4c31-b528-9d28443ddf41",
-        "cbf522c5-595e-4fa3-9ef7-7a32b1c67699",
         "df1ae63a-4541-4c76-9d2c-abb8d740ac7c",
         "e2221ab4-a2ad-4788-ad2e-ba198a4d1be8",
-        "ac0bf347-a635-43bb-bffd-0057dd2ede95",
-        "83593057-30d5-41f6-954c-de7e8e9768b6",
-        "6dbf12ef-8181-4545-ac44-0d8030378fce",
         "ed05d24e-b77b-4584-90fe-498e82bcc7e8",
-        "5a0738fe-e647-40dc-bb18-150fde89c132",
-        "a0524c15-8074-4353-9cd3-3a6803c6dd04"
+        "cbf522c5-595e-4fa3-9ef7-7a32b1c67699"
     ],
     "tutorial": ""
 }
