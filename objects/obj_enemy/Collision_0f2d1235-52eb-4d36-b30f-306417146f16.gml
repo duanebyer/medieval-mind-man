@@ -1,5 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
-with(other){
-	other.hp -= 2;
+///@description deals damage to the player
+
+with (other){
+	other.hp -= HP_DAMAGE_BY_ENEMY;
+	//TODO: if other.hp <= 0, gameover
 }

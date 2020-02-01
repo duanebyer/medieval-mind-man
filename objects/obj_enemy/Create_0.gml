@@ -1,9 +1,12 @@
 /// @description Creates a bad guy
 
 hp = 3;				//health of the enemy
+damage = 1;
 dir = choose(-1, 1);	//current direction of the enemy
 velocity_x = 3;				//the horizontal speed
 velocity_y = 0;				//the vertical speed
+
+HP_DAMAGE_BY_ENEMY = 2
 
 //STUFF COPIED FROM DUANE
 

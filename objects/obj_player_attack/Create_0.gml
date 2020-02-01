@@ -1,0 +1,3 @@
+damage = 1;
+HITSTUN_VELOCITY_X = 4;
+HITSTUN_VELOCITY_Y = 2;
