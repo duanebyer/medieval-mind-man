@@ -33,16 +33,16 @@ if (self.state == NORMAL) {
 	self.image_speed = 1;
 	if (!place_free(x, y + 1)) {
 		if (move_dir == 0) {
-			self.sprite_index = spr_player_stand;
+			self.sprite_index = self.sprite_stand;
 		} else {
-			self.sprite_index = spr_player_walk;
+			self.sprite_index = self.sprite_walk;
 			self.image_xscale = move_dir;
 		}
 	} else {
 		if (self.velocity_y < 0) {
-			self.sprite_index = spr_player_jump;
+			self.sprite_index = self.sprite_jump;
 		} else {
-			self.sprite_index = spr_player_fall;
+			self.sprite_index = self.sprite_fall;
 		}
 		if (move_dir != 0) {
 			self.image_xscale = move_dir;

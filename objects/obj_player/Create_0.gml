@@ -18,6 +18,11 @@ DELTA_T = 1 / room_speed;
 
 state = NORMAL;
 
+sprite_stand = spr_player_axe_stand;
+sprite_walk = spr_player_axe_walk;
+sprite_jump = spr_player_axe_jump;
+sprite_fall = spr_player_axe_fall;
+
 gravity_enabled = true;
 max_fall_speed = NORMAL_FALL_SPEED;
 

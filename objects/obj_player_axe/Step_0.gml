@@ -52,8 +52,8 @@ if (self.state == CHARGE) {
 		self.image_index = self.image_number - 1;
 	}
 	self.charge_timer += DELTA_T;
-	if (self.sprite_index != spr_player_charge) {
-		self.sprite_index = spr_player_charge;
+	if (self.sprite_index != self.sprite_charge) {
+		self.sprite_index = self.sprite_charge;
 		self.image_speed = self.image_number / CHARGE_TIME_MAX * DELTA_T;
 		self.image_index = 0;
 	}
@@ -77,8 +77,8 @@ if (self.state == ATTACK) {
 		}
 	}
 	self.attack_timer += DELTA_T;
-	if (self.sprite_index != spr_player_attack) {
-		self.sprite_index = spr_player_attack;
+	if (self.sprite_index != self.sprite_attack) {
+		self.sprite_index = self.sprite_attack;
 		self.image_speed = self.image_number / ATTACK_TIME * DELTA_T;
 		self.image_index = 0;
 	}
