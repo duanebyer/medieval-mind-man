@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "82cb176f-b459-4577-9dd2-a050263f217f",
+            "Value": {
+                "id": "2eadfaa9-af46-4827-82c9-c103a37e8ceb",
+                "resourcePath": "rooms\\room1\\room1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "836e90cb-6371-4240-8c1a-8d86af5bccaa",
             "Value": {
                 "id": "6331d752-6812-4053-814b-601e435fb509",
@@ -212,6 +220,14 @@
                 "id": "ccb457f4-963e-48c7-be42-2105ddc1a362",
                 "resourcePath": "scripts\\intent_attack_pressed\\intent_attack_pressed.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a578d450-1def-44ec-bd45-915da186036b",
+            "Value": {
+                "id": "63f6575e-f6be-446b-9dd7-167f82db77ba",
+                "resourcePath": "rooms\\room2\\room2.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
