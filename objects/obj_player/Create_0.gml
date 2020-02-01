@@ -28,3 +28,5 @@ max_fall_speed = NORMAL_FALL_SPEED;
 
 velocity_x = 0;
 velocity_y = 0;
+
+hp = 10
