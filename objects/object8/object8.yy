@@ -1,8 +1,8 @@
 {
-    "id": "4f9599f5-92eb-43f2-9670-19e6f9c0be81",
+    "id": "d9cda1c7-4d20-42a8-8eaa-f4ebc2909469",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "object5",
+    "name": "object8",
     "eventList": [
         
     ],

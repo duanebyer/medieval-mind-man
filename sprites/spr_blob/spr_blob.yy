@@ -2,7 +2,7 @@
     "id": "5862d89f-e8c6-4219-8fd0-422d74a5c8ba",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "bad_guy",
+    "name": "spr_blob",
     "For3D": false,
     "HTile": false,
     "VTile": false,

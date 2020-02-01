@@ -1,29 +1,29 @@
-/// @description Creates a bad guy
-
-hp = 3;				//health of the enemy
-damage = 1;
-dir = choose(-1, 1);	//current direction of the enemy
-velocity_x = 3;				//the horizontal speed
-velocity_y = 0;				//the vertical speed
-
-HP_DAMAGE_BY_ENEMY = 2
-
-//STUFF COPIED FROM DUANE
-
 NORMAL = 1;
-STATE_END = 2;
+HITSTUN = 2;
+DEAD = 3;
+STATE_END = 4;
 
 GRAVITY = 1000;
-MAX_FALL_SPEED = 450;
-
-WALK_ACCELERATION = 1400;
-WALK_FRICTION = 2000;
-WALK_SPEED = 170;
-
-JUMP_FRICTION = 1400;
-JUMP_MIN_SPEED = 100;
-JUMP_MAX_SPEED = 500;
+NORMAL_FALL_SPEED = 450;
 
 DELTA_T = 1 / room_speed;
 
 state = NORMAL;
+
+gravity_enabled = true;
+max_fall_speed = NORMAL_FALL_SPEED;
+
+hp = 3;				//health of the enemy
+damage = 1;
+velocity_x = 0;				//the horizontal speed
+velocity_y = 0;				//the vertical speed
+
+sprite_dead = noone;
+sprite_hitstun = noone;
+
+hitstun_time = 1;
+hitstun_timer = 0;
+hitstun_friction_air = 500;
+hitstun_friction_ground = 1500;
+
+y -= 1;

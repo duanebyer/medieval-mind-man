@@ -1,3 +1,3 @@
 damage = 1;
-HITSTUN_VELOCITY_X = 4;
-HITSTUN_VELOCITY_Y = 2;
+hitstun_velocity_x = 240;
+hitstun_velocity_y = 120;
