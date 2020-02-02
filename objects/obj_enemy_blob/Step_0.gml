@@ -12,5 +12,6 @@ if (state == NORMAL) {
 		}
 	}
 	velocity_x = dir * WALK_SPEED;
+	sprite_index = sprite_normal;
 	image_xscale = dir;
 }

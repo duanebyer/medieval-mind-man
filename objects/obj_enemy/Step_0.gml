@@ -5,19 +5,16 @@ if (state == HITSTUN || state == DEAD) {
 	if (place_free(x, y + 1)) {
 		fric = hitstun_friction_air;
 	}
-	var velocity_change = fric * DELTA_T;
-	var velocity_mag = sqrt(sqr(velocity_x) + sqr(velocity_y));
-	if (abs(velocity_mag) <= velocity_change) {
+	var velocity_change_x = fric * DELTA_T;
+	if (abs(velocity_x) <= velocity_change_x) {
 		velocity_x = 0;
-		velocity_y = 0;
 	} else {
-		velocity_x -= velocity_change * velocity_x / velocity_mag;
-		velocity_y -= velocity_change * velocity_y / velocity_mag;
+		velocity_x += -sign(velocity_x) * velocity_change_x;
 	}
 }
 
 if (state == HITSTUN) {
-	if (hitstun_timer >= hitstun_time) {
+	if (hitstun_timer >= hitstun_time && !place_free(x, y + 1)) {
 		state = NORMAL;
 	}
 	hitstun_timer += DELTA_T;
