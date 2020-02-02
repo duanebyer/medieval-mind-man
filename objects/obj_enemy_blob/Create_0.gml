@@ -13,4 +13,4 @@ velocity_y = 0;				//the vertical speed
 
 sprite_normal = spr_blob;
 sprite_dead = spr_blob_dead;
-sprite_hitstun = spr_blob_hitstun;
+sprite_hitstun = spr_blob;

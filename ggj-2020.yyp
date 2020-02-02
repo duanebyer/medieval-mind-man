@@ -567,6 +567,14 @@
             }
         },
         {
+            "Key": "c1d270a1-dbcd-40cc-9bc8-d98dafc202f1",
+            "Value": {
+                "id": "8c558bc4-f948-4c4a-a92c-99b4d6e9dfdc",
+                "resourcePath": "sprites\\spr_mortar_dead\\spr_mortar_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c61bddfc-abf0-4e0b-83d2-c6f058634a55",
             "Value": {
                 "id": "497f4a8a-a37a-483b-b8c7-31bc204330e0",

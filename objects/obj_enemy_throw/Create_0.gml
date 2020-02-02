@@ -29,6 +29,6 @@ CREATE_TIMEOUT = 6;
 CREATE_TIMER = 0;
 MAX_SPAWN = 10;
 
-WITHIN_RANGE = 1500;			//only start spawning when player is in sight
+WITHIN_RANGE = 700;			//only start spawning when player is in sight
 
 mass = 2;
