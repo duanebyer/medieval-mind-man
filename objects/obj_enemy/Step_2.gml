@@ -9,6 +9,9 @@ if (self.gravity_enabled) {
 
 // Move horizontally.
 if (!place_free(x + delta_x, y)) {
+	if (is_projectile) {
+		instance_destroy();
+	}
 	for (var i = 0; i < delta_x; ++i) {
 		if (place_free(x + sign(delta_x), y)) {
 			self.x += sign(delta_x);
@@ -23,6 +26,9 @@ if (!place_free(x + delta_x, y)) {
 
 // Move vertically.
 if (!place_free(x, y + delta_y)) {
+	if (is_projectile) {
+		instance_destroy();
+	}
 	for (var i = 0; i < delta_y; ++i) {
 		if (place_free(x, y + sign(delta_y))) {
 			self.y += sign(delta_y);

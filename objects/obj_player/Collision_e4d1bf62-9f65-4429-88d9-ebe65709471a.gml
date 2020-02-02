@@ -1,7 +1,20 @@
 if (other.state != other.DEAD && other.state != other.HITSTUN && self.state != HITSTUN) {
-	self.state = HITSTUN;
-	self.hp = -other.damage;
-	self.hitstun_timer = 0;
-	self.velocity_y = -HITSTUN_VELOCITY_Y;
-	self.velocity_x = -sign(other.x - self.x) * HITSTUN_VELOCITY_X;
+	if (!other.is_reflected) {
+		self.state = HITSTUN;
+		self.hp = -other.damage;
+		self.hitstun_timer = 0;
+		self.velocity_y = -HITSTUN_VELOCITY_Y;
+		self.velocity_x = -sign(other.x - self.x) * HITSTUN_VELOCITY_X;
+		if (other.is_projectile) {
+			with(other) {
+				instance_destroy();
+			}
+		} else {
+			with (other) {
+				state = HITSTUN;
+				hitstun_timer = self.hitstun_time / 2;
+				velocity_x = -sign(other.x - self.x) * other.HITSTUN_VELOCITY_X / mass;
+			}
+		}
+	}
 }
