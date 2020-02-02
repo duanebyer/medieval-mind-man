@@ -26,6 +26,8 @@ hitstun_timer = 0;
 hitstun_friction_air = 500;
 hitstun_friction_ground = 1500;
 
+last_player_attack = noone;
+
 is_projectile = false;
 is_reflected = false;
 

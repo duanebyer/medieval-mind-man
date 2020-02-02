@@ -1,4 +1,5 @@
-if (state != HITSTUN && state != DEAD) {
+if (last_player_attack != other && state != DEAD) {
+	last_player_attack = other;
 	if (is_projectile) {
 		is_reflected = true;
 		velocity_x = other.image_xscale * other.hitstun_velocity_x;
