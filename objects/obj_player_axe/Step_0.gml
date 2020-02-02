@@ -2,65 +2,79 @@ event_inherited();
 
 if (self.state == NORMAL) {
 	if (intent_attack_pressed()) {
-		self.state = CHARGE;
-		self.charge_timer = 0;
-		if (place_free(x, y + 1) && self.velocity_y >= 0) {
-			self.velocity_y = -CHARGE_JUMP_VELOCITY;
+		if (!place_free(x, y + 1)) {
+			self.state = CHARGE;
+			self.charge_timer = 0;
+		} else {
+			self.state = ATTACK_AIR;
+			instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash_air);
+			self.velocity_y = -ATTACK_AIR_VELOCITY_Y;
+			self.velocity_x = sign(image_xscale) * ATTACK_AIR_VELOCITY_X;
 		}
 	}
 }
 
-if (self.state == CHARGE) {
+if (self.state == CHARGE || self.state == CHARGE_HEAVY) {
 	self.gravity_enabled = true;
 	self.max_fall_speed = NORMAL_FALL_SPEED;
-	var fric = 0;
-	if (!place_free(x, y + 1)) {
-		fric = CHARGE_GROUND_FRICTION;
-	} else {
-		var move_dir = 0;
-		if (intent_left()) {
-			move_dir -= 1;
-		}
-		if (intent_right()) {
-			move_dir += 1;
-		}
-		if (move_dir != sign(self.velocity_x)) {
-			fric = CHARGE_AIR_FRICTION_MAX;
-		} else {
-			fric = CHARGE_AIR_FRICTION_MIN;
-		}
-	}
-	var velocity_change_x = fric * DELTA_T;
+	var velocity_change_x = CHARGE_FRICTION * DELTA_T;
 	if (abs(self.velocity_x) <= velocity_change_x) {
 		self.velocity_x = 0;
 	} else {
 		self.velocity_x += -sign(self.velocity_x) * velocity_change_x;
 	}
-	if (!intent_attack() && self.charge_timer > CHARGE_TIME_MIN) {
-		self.state = ATTACK;
-		self.attack_timer = 0;
-		instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash);
-		if (place_free(x, y + 1)) {
-			self.velocity_y = -ATTACK_JUMP_VELOCITY_Y;
-			self.velocity_x = image_xscale * ATTACK_JUMP_VELOCITY_X;
-		} else {
-			self.velocity_y = -ATTACK_GROUND_VELOCITY_Y;
-			self.velocity_x = image_xscale * ATTACK_GROUND_VELOCITY_X;
-		}
+}
+
+if (self.state == CHARGE) {
+	if (place_free(x, y + 1)) {
+		self.state = NORMAL;
 	}
-	if (self.charge_timer >= CHARGE_TIME_MAX) {
-		self.image_speed = 0;
-		self.image_index = self.image_number - 1;
+	if (self.charge_timer > CHARGE_TIME) {
+		if (!intent_attack()) {
+			self.state = ATTACK;
+			self.attack_timer = 0;
+			instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash);
+			self.velocity_y = -ATTACK_VELOCITY_Y;
+			self.velocity_x = image_xscale * ATTACK_VELOCITY_X;
+		} else {
+			self.state = CHARGE_HEAVY;
+			self.charge_timer = 0;
+		}
 	}
 	self.charge_timer += DELTA_T;
 	if (self.sprite_index != self.sprite_charge) {
 		self.sprite_index = self.sprite_charge;
-		self.image_speed = self.image_number / CHARGE_TIME_MAX * DELTA_T;
+		self.image_speed = self.image_number / CHARGE_TIME * DELTA_T;
 		self.image_index = 0;
 	}
 }
 
-if (self.state == ATTACK) {
+if (self.state == CHARGE_HEAVY) {
+	if (place_free(x, y + 1)) {
+		self.state = NORMAL;
+	}
+	if (self.charge_timer >= CHARGE_HEAVY_TIME) {
+		if (!intent_attack()) {
+			self.state = ATTACK_HEAVY;
+			self.attack_timer = 0;
+			instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash_heavy);
+			self.velocity_y = -ATTACK_HEAVY_VELOCITY_Y;
+			self.velocity_x = image_xscale * ATTACK_HEAVY_VELOCITY_X;
+		}
+	}
+	self.charge_timer += DELTA_T;
+	if (self.charge_timer >= CHARGE_HEAVY_TIME) {
+		self.image_speed = 0;
+		self.image_index = self.image_number - 1;
+	}
+	if (self.sprite_index != self.sprite_charge_heavy) {
+		self.sprite_index = self.sprite_charge_heavy;
+		self.image_speed = self.image_number / CHARGE_HEAVY_TIME * DELTA_T;
+		self.image_index = 0;
+	}
+}
+
+if (self.state == ATTACK || self.state == ATTACK_HEAVY) {
 	self.gravity_enabled = true;
 	self.max_fall_speed = ATTACK_FALL_SPEED;
 	var fric = place_free(x, y + 1) ? ATTACK_AIR_FRICTION : ATTACK_GROUND_FRICTION;
@@ -70,6 +84,9 @@ if (self.state == ATTACK) {
 	} else {
 		self.velocity_x += -sign(self.velocity_x) * velocity_change_x;
 	}
+}
+
+if (self.state == ATTACK) {
 	if (self.attack_timer >= ATTACK_TIME) {
 		self.image_speed = 0;
 		self.image_index = self.image_number - 1;
@@ -82,5 +99,36 @@ if (self.state == ATTACK) {
 		self.sprite_index = self.sprite_attack;
 		self.image_speed = self.image_number / ATTACK_TIME * DELTA_T;
 		self.image_index = 0;
+	}
+}
+
+if (self.state == ATTACK_HEAVY) {
+	if (self.attack_timer >= ATTACK_HEAVY_TIME) {
+		self.image_speed = 0;
+		self.image_index = self.image_number - 1;
+		if (!place_free(x, y + 1)) {
+			self.state = NORMAL;
+		}
+	}
+	self.attack_timer += DELTA_T;
+	if (self.sprite_index != self.sprite_attack_heavy) {
+		self.sprite_index = self.sprite_attack_heavy;
+		self.image_speed = self.image_number / ATTACK_HEAVY_TIME * DELTA_T;
+		self.image_index = 0;
+	}
+}
+
+if (self.state == ATTACK_AIR) {
+	if (!place_free(x, y + 1)) {
+		self.state = NORMAL;
+	}
+	if (self.sprite_index != self.sprite_attack_air) {
+		self.sprite_index = self.sprite_attack_air;
+		self.image_speed = 1;
+		self.image_index = 0;
+	}
+	if (self.image_index >= self.image_number - 1) {
+		self.image_index = self.image_number - 1;
+		self.image_speed = 0;
 	}
 }

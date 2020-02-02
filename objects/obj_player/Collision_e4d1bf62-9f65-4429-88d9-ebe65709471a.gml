@@ -9,6 +9,12 @@ if (other.state != other.DEAD && other.state != other.HITSTUN && self.state != H
 			with(other) {
 				instance_destroy();
 			}
+		} else {
+			with (other) {
+				state = HITSTUN;
+				hitstun_timer = self.hitstun_time / 2;
+				velocity_x = -sign(other.x - self.x) * other.HITSTUN_VELOCITY_X / mass;
+			}
 		}
 	}
 }
