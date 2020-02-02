@@ -21,7 +21,7 @@ velocity_y = 0;				//the vertical speed
 sprite_dead = noone;
 sprite_hitstun = noone;
 
-hitstun_time = 1;
+hitstun_time = 1.5;
 hitstun_timer = 0;
 hitstun_friction_air = 500;
 hitstun_friction_ground = 1500;

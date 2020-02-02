@@ -40,7 +40,15 @@ if (self.state == NORMAL) {
 		}
 	} else {
 		if (self.velocity_y < 0) {
-			self.sprite_index = self.sprite_jump;
+			if (self.sprite_index != self.sprite_jump) {
+				self.sprite_index = self.sprite_jump;
+				self.image_index = 0;
+			} else {
+				if (self.image_index >= self.image_number - 1) {
+					self.image_index = self.image_number - 1;
+					self.image_speed = 0;
+				}
+			}
 		} else {
 			self.sprite_index = self.sprite_fall;
 		}
