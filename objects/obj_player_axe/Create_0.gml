@@ -32,3 +32,5 @@ sprite_attack = spr_player_axe_attack;
 
 charge_timer = 0;
 attack_timer = 0;
+
+attack = noone;
