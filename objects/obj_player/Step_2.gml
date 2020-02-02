@@ -34,3 +34,4 @@ if (!place_free(x, y + delta_y)) {
 } else {
 	self.y += delta_y;
 }
+

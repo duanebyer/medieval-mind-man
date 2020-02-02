@@ -74,7 +74,7 @@ if (self.state == CHARGE_HEAVY) {
 	}
 }
 
-if (self.state == ATTACK || self.state == ATTACK_HEAVY) {
+if (self.state == ATTACK || self.state == ATTACK_HEAVY || self.state == ATTACK_LANDING) {
 	self.gravity_enabled = true;
 	self.max_fall_speed = ATTACK_FALL_SPEED;
 	var fric = place_free(x, y + 1) ? ATTACK_AIR_FRICTION : ATTACK_GROUND_FRICTION;
@@ -88,11 +88,7 @@ if (self.state == ATTACK || self.state == ATTACK_HEAVY) {
 
 if (self.state == ATTACK) {
 	if (self.attack_timer >= ATTACK_TIME) {
-		self.image_speed = 0;
-		self.image_index = self.image_number - 1;
-		if (!place_free(x, y + 1)) {
-			self.state = NORMAL;
-		}
+		self.state = NORMAL;
 	}
 	self.attack_timer += DELTA_T;
 	if (self.sprite_index != self.sprite_attack) {
@@ -104,11 +100,7 @@ if (self.state == ATTACK) {
 
 if (self.state == ATTACK_HEAVY) {
 	if (self.attack_timer >= ATTACK_HEAVY_TIME) {
-		self.image_speed = 0;
-		self.image_index = self.image_number - 1;
-		if (!place_free(x, y + 1)) {
-			self.state = NORMAL;
-		}
+		self.state = NORMAL;
 	}
 	self.attack_timer += DELTA_T;
 	if (self.sprite_index != self.sprite_attack_heavy) {
@@ -118,9 +110,23 @@ if (self.state == ATTACK_HEAVY) {
 	}
 }
 
+if (self.state == ATTACK_LANDING) {
+	if (self.attack_timer >= ATTACK_LANDING_TIME) {
+		self.state = NORMAL;
+	}
+	self.attack_timer += DELTA_T;
+	if (self.sprite_index != self.sprite_attack_landing) {
+		self.sprite_index = self.sprite_attack_landing;
+		self.image_speed = self.image_number / ATTACK_LANDING_TIME * DELTA_T;
+		self.image_index = 0;
+	}
+}
+
 if (self.state == ATTACK_AIR) {
 	if (!place_free(x, y + 1)) {
-		self.state = NORMAL;
+		self.state = ATTACK_LANDING;
+		self.attack_timer = 0;
+		instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash_landing);
 	}
 	if (self.sprite_index != self.sprite_attack_air) {
 		self.sprite_index = self.sprite_attack_air;

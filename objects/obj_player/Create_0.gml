@@ -2,7 +2,9 @@
 
 NORMAL = 1;
 HITSTUN = 2;
-STATE_END = 3;
+STATE_END = 4;
+DEAD = 3;
+death_timer = 0;
 
 GRAVITY = 1000;
 NORMAL_FALL_SPEED = 450;
@@ -38,4 +40,4 @@ hitstun_timer = 0;
 velocity_x = 0;
 velocity_y = 0;
 
-hp = 10
+hp = 3

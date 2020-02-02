@@ -31,7 +31,7 @@ velocity_x = velocity_mag * dir;		//the horizontal speed
 velocity_y = 0;				//the vertical speed
 
 sprite_dead = spr_bat_dead;
-sprite_hitstun = spr_bat_hitstun;
+sprite_hitstun = spr_bat;
 
 hitstun_time = 1;
 hitstun_timer = 0;

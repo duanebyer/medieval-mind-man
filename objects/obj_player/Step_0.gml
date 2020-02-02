@@ -82,3 +82,19 @@ if (self.state == HITSTUN) {
 		self.sprite_index = self.sprite_stand;
 	}
 }
+
+if (self.hp <= 0) {
+	self.visible = false;
+	self.state = DEAD;
+	if (self.state != DEAD) {
+		death_timer = 0;
+	}
+}
+
+if (self.state == DEAD) {
+	death_timer += DELTA_T;
+	if (death_timer >= 2) {
+		show_debug_message("Restart")
+		room_restart();
+	}
+}
