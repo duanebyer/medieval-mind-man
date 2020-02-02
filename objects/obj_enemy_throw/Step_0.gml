@@ -8,7 +8,7 @@ if (state == NORMAL){
 		//SPAWN A BLOB, ANIMATION CAN BE BETTER CREATED
 		var blob = instance_create_depth(x, y, self.depth - 1, obj_enemy_blob);
 		velocity_mag = random_range(min_throw_vel, max_throw_vel);
-		velocity_angle = random_range(0, 180);
+		velocity_angle = random_range(40, 140);
 		blob.velocity_x = velocity_mag * cos(velocity_angle);
 		blob.velocity_y = velocity_mag * sin(velocity_angle);
 		//adjust velocity to be random

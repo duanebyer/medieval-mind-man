@@ -19,8 +19,8 @@ BAT_DISTANCE = 250
 DIVE_TIMEOUT = 2;				//the amount of time we wait before refreshing velocityX/velocityY in dive mode
 DIVE_TIMER = 0			//the current time.
 
-AFTERDIVE = 10;
-AFTERDIVE_TIMEOUT = 1;
+AFTERDIVE = 6;
+AFTERDIVE_TIMEOUT = 3;
 AFTERDIVE_TIMER = 0;
 
 hp = 1;						//health of the enemy
