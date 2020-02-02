@@ -1,6 +1,6 @@
 ///@description 
 hp -= other.damage;
-if (hp >= 0) {
+if (hp > 0) {
 	state = HIT_STUN;
 	hitstun_timer = 0;
 } else {

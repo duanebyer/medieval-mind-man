@@ -11,7 +11,7 @@ DELTA_T = 1 / room_speed;
 state = NORMAL;
 
 gravity_enabled = true;
-max_fall_speed = NORMAL_FALL_SPEED;
+max_fall_speed = NORMAL_FALL_SPEED;		//D: do we need this?
 
 hp = 3;				//health of the enemy
 damage = 1;

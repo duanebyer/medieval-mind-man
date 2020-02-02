@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "6ea84c14-74a2-4895-9040-944cf0648f13",
+            "Value": {
+                "id": "8beb938c-08f7-4d64-bbd5-68c3c54b34a2",
+                "resourcePath": "sprites\\bat_circle\\bat_circle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7076eecf-5c09-487e-b863-32232774c8b0",
             "Value": {
                 "id": "d0488b4d-e79d-484f-b4a0-7088536f3361",
@@ -436,14 +444,6 @@
                 "id": "0f3cdada-983d-44e7-944c-ecadf34162d0",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
-            }
-        },
-        {
-            "Key": "d9cda1c7-4d20-42a8-8eaa-f4ebc2909469",
-            "Value": {
-                "id": "e78604a2-c192-46d3-b71a-10ad0441ed24",
-                "resourcePath": "objects\\object8\\object8.yy",
-                "resourceType": "GMObject"
             }
         },
         {

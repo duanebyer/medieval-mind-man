@@ -34,4 +34,5 @@ if (state == DEAD) {
 		image_index = 0;
 		image_speed = 1;
 	}
+	damage = 0			//ensures dead enemies cannot damage player
 }
