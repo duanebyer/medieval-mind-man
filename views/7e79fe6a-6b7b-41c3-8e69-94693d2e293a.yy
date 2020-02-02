@@ -11,7 +11,8 @@
         "c843b7e4-ad92-4410-a3d4-f73ac855e7b8",
         "3b7dd1c2-2d78-4a33-84f3-99da67789a9d",
         "7b4ac0c6-0133-4ce4-8005-6a01efad4579",
-        "a80e925e-2851-40cc-898d-bb974440564c"
+        "a80e925e-2851-40cc-898d-bb974440564c",
+        "967d5457-ae6b-4070-ba20-efb4b60a2811"
     ],
     "filterType": "GMSprite",
     "folderName": "player_axe",
