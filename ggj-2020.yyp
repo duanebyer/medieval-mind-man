@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "5396f3b8-5fb8-486e-86f9-6c1dec28b753",
+            "Value": {
+                "id": "0d750a48-3727-433a-9346-e9c5f143651d",
+                "resourcePath": "sprites\\spr_throw\\spr_throw.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "54f77693-2601-435b-aaa0-722e4a1113d2",
             "Value": {
                 "id": "b74a5dd6-a68f-430a-a18b-1738c0d0a934",
@@ -332,6 +340,14 @@
                 "id": "a32747ea-8662-42b5-b3dd-7e812c075634",
                 "resourcePath": "sprites\\spr_player_gun_jump\\spr_player_gun_jump.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8fba27db-86d1-48e3-9672-9f439e20f077",
+            "Value": {
+                "id": "11abd82c-aa2b-4f7c-8a48-f6aee6565dbf",
+                "resourcePath": "objects\\obj_enemy_throw\\obj_enemy_throw.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -595,6 +611,14 @@
             "Value": {
                 "id": "9100bc86-2cee-47e4-b568-37df2f418b6e",
                 "resourcePath": "sprites\\spr_player_axe_stand\\spr_player_axe_stand.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ecb62ca5-969c-44e7-895b-f27672daf3fc",
+            "Value": {
+                "id": "afb71a66-c462-495d-9681-7f20c690f2af",
+                "resourcePath": "sprites\\spr_throw_dead\\spr_throw_dead.yy",
                 "resourceType": "GMSprite"
             }
         },
