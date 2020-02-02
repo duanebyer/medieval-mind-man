@@ -20,7 +20,7 @@ if (state == NORMAL) {
 	if (point_distance(x, y, player.x, player.y) <= BAT_DISTANCE){
 		state = DIVE;	
 		if (velocity_x < 0){
-			dir *= -1	
+			dir = -1	
 		}
 		velocity_x = player.x - self.x;
 		velocity_y = player.y - self.y;

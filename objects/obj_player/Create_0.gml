@@ -40,4 +40,4 @@ hitstun_timer = 0;
 velocity_x = 0;
 velocity_y = 0;
 
-hp = 3
+hp = 8

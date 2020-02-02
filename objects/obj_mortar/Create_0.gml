@@ -30,5 +30,5 @@ mass = 2.5;
 fire_x = 0;
 fire_y = 0;
 
-sprite_dead = spr_mortar;
+sprite_dead = spr_mortar_dead;
 sprite_hitstun = spr_mortar;
