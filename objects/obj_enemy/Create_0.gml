@@ -26,4 +26,9 @@ hitstun_timer = 0;
 hitstun_friction_air = 500;
 hitstun_friction_ground = 1500;
 
+is_projectile = false;
+is_reflected = false;
+
+mass = 1;
+
 y -= 1;

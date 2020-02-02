@@ -44,7 +44,7 @@
             "eventtype": 4,
             "m_owner": "0c896e58-d509-40a8-abfa-183cd9d555ab"
         },
-	{
+        {
             "id": "6e497b29-09b3-4576-9435-b79faf841e25",
             "modelName": "GMEvent",
             "mvc": "1.0",

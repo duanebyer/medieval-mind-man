@@ -1,4 +1,19 @@
-if (abs(self.velocity_x - other.velocity_x) <= 50) {
+if (other.is_projectile && other.is_reflected) {
+		hp -= other.damage;
+		if (hp >= 0) {
+			state = HITSTUN;
+			hitstun_timer = 0;
+		} else {
+			state = DEAD;
+		}
+		velocity_x = sign(other.velocity_x) * 400;
+		velocity_y = -300;
+
+		var flash = instance_create_depth(x, y, depth - 1, obj_flash);
+		var angle = -radtodeg(arctan2(velocity_y, velocity_x));
+		flash.image_angle = angle;
+}
+if (abs(self.velocity_x - other.velocity_x) <= 10) {
 	if (other.x == self.x) {
 		if (place_free(self.x + 1, y)) {
 			self.x += 1;

@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "66f4680b-f7a9-464b-b36f-515e7a65abce",
+            "Value": {
+                "id": "07c2e62e-490b-4bf7-9b43-cbb50cebc112",
+                "resourcePath": "sprites\\spr_mortar_projectile\\spr_mortar_projectile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6dbf12ef-8181-4545-ac44-0d8030378fce",
             "Value": {
                 "id": "79970351-b7ef-45f5-9be1-8026f9172d78",
@@ -268,6 +276,14 @@
                 "id": "d0488b4d-e79d-484f-b4a0-7088536f3361",
                 "resourcePath": "rooms\\room0\\room0.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "72225d42-9535-47ab-a20b-3f6a99b5ff97",
+            "Value": {
+                "id": "e6146756-cff3-434f-bcba-623d7fef1d23",
+                "resourcePath": "objects\\obj_mortar_projectile_impact_effect\\obj_mortar_projectile_impact_effect.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -359,6 +375,14 @@
             }
         },
         {
+            "Key": "9d6eba36-930b-4bcb-925a-102d8a73278e",
+            "Value": {
+                "id": "8e82153b-3551-49c1-80fe-aa097ed6f58e",
+                "resourcePath": "objects\\obj_mortar\\obj_mortar.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9e8d34e3-08a6-4245-a4aa-86f23b34b83c",
             "Value": {
                 "id": "8a517d13-4947-40b1-b33e-bc7b9a81ab9a",
@@ -428,6 +452,14 @@
                 "id": "81d9c5a4-c359-4f23-a63f-e4de0e52d461",
                 "resourcePath": "sprites\\spr_player_axe_walk\\spr_player_axe_walk.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b0ecb7cc-45bf-4628-bf6c-00aa20c0d977",
+            "Value": {
+                "id": "84b24aef-e9a6-4742-bf2e-bb9ec6a06b5a",
+                "resourcePath": "objects\\obj_mortar_projectile\\obj_mortar_projectile.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -508,6 +540,14 @@
                 "id": "73b85c64-b298-4735-9539-3d6e3cc03247",
                 "resourcePath": "objects\\obj_spike\\obj_spike.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "cfd888cb-e439-4a67-a163-e7315768179e",
+            "Value": {
+                "id": "7da4bfde-70d1-4ece-abf1-2d49832a4280",
+                "resourcePath": "sprites\\spr_mortar_charge\\spr_mortar_charge.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -607,6 +647,14 @@
             }
         },
         {
+            "Key": "eb6fe493-6315-49eb-8736-f3d81f8faf04",
+            "Value": {
+                "id": "2527504e-2525-4e5c-95ae-417e3d26b364",
+                "resourcePath": "sprites\\spr_mortar\\spr_mortar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ed05d24e-b77b-4584-90fe-498e82bcc7e8",
             "Value": {
                 "id": "7a09eaec-f29a-4df3-93e9-95dc29f06144",
@@ -636,6 +684,14 @@
                 "id": "a70f04ad-8914-42f8-a82e-0afd827fc1ef",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f6589b1d-3f8f-421f-a460-c316ecb026a7",
+            "Value": {
+                "id": "94503862-17bf-4fc5-a43e-46d3611514b6",
+                "resourcePath": "sprites\\spr_hitstun\\spr_hitstun.yy",
+                "resourceType": "GMSprite"
             }
         }
     ],
