@@ -39,12 +39,7 @@ if (self.state == CHARGE) {
 	if (!intent_attack() && self.charge_timer > CHARGE_TIME_MIN) {
 		self.state = ATTACK;
 		self.attack_timer = 0;
-		if (self.attack != noone) {
-			with (self.attack) {
-				instance_destroy();
-			}
-		}
-		self.attack = instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash);
+		instance_create_depth(self.x, self.y, self.depth - 1, obj_axe_slash);
 		if (place_free(x, y + 1)) {
 			self.velocity_y = -ATTACK_JUMP_VELOCITY_Y;
 			self.velocity_x = image_xscale * ATTACK_JUMP_VELOCITY_X;
@@ -80,11 +75,6 @@ if (self.state == ATTACK) {
 		self.image_index = self.image_number - 1;
 		if (!place_free(x, y + 1)) {
 			self.state = NORMAL;
-			if (self.attack != noone) {
-				with (self.attack) {
-					instance_destroy();
-				}
-			}
 		}
 	}
 	self.attack_timer += DELTA_T;

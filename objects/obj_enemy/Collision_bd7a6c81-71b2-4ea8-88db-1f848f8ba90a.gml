@@ -10,5 +10,7 @@ if (state != HITSTUN && state != DEAD) {
 	velocity_x = other.image_xscale * other.hitstun_velocity_x;
 	velocity_y = other.image_yscale * other.hitstun_velocity_y;
 
-	instance_create_depth(x, y, depth - 1, obj_flash);
+	var flash = instance_create_depth(x, y, depth - 1, obj_flash);
+	var angle = -radtodeg(arctan2(velocity_y, velocity_x));
+	flash.image_angle = angle;
 }

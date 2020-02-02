@@ -359,6 +359,14 @@
             }
         },
         {
+            "Key": "967d5457-ae6b-4070-ba20-efb4b60a2811",
+            "Value": {
+                "id": "f068d173-9512-428a-8b8c-5c6f6a53980d",
+                "resourcePath": "sprites\\spr_axe_slash\\spr_axe_slash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "96f0aa1d-cc6c-4d79-adce-8ad1621ba016",
             "Value": {
                 "id": "42eddd77-8452-4d73-be39-740ef20449c8",
@@ -402,7 +410,7 @@
             "Key": "a80e925e-2851-40cc-898d-bb974440564c",
             "Value": {
                 "id": "a97c036c-f445-44ff-bd0f-00d0620e42e2",
-                "resourcePath": "sprites\\spr_axe_slash\\spr_axe_slash.yy",
+                "resourcePath": "sprites\\spr_axe_slash_collision_mask\\spr_axe_slash_collision_mask.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -57,3 +57,28 @@ if (self.state == NORMAL) {
 		}
 	}
 }
+
+if (self.state == HITSTUN) {
+	self.gravity_enabled = true;
+	self.max_fall_speed = NORMAL_FALL_SPEED;
+	var fric = HITSTUN_FRICTION_GROUND;
+	if (place_free(self.x, self.y + 1)) {
+		fric = HITSTUN_FRICTION_AIR;
+	}
+	var velocity_change_x = fric * DELTA_T;
+	if (abs(self.velocity_x) <= velocity_change_x) {
+		self.velocity_x = 0;
+	} else {
+		self.velocity_x += -sign(self.velocity_x) * velocity_change_x;
+	}
+	if (self.hitstun_timer >= HITSTUN_TIME && (self.velocity_y > 0 || !place_free(self.x, self.y + 1))) {
+		self.state = NORMAL;
+	}
+	self.hitstun_timer += DELTA_T;
+	self.image_speed = 1;
+	if (place_free(x, y + 1)) {
+		self.sprite_index = self.sprite_fall;
+	} else {
+		self.sprite_index = self.sprite_stand;
+	}
+}
